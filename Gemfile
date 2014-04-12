@@ -21,6 +21,8 @@ gem 'will_paginate', '~> 3.0'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
 
+gem 'rack-cors', :require => 'rack/cors' # allow cross-domain ajax
+
 group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
