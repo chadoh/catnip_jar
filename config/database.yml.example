@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: catnip_jar_dev
+  pool: 5
+  username: chadoh
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: catnip_jar_test
+  pool: 5
+  username: chadoh
+  password:

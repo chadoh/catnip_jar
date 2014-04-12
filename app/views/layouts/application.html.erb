@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Catnip Jar" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "Catnip Jar", root_path %></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+    </nav>
+
+    <div id="main" class="row">
+      <div class="small-12 columns">
+        <% flash.each do |name, msg| %>
+          <div data-alert class="alert-box info">
+            <%= msg %>
+            <a href="#" class="close">&times;</a>
+          </div>
+        <% end -%>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
