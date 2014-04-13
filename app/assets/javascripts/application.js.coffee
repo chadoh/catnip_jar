@@ -15,5 +15,8 @@
 #= require foundation
 #= require turbolinks
 #= require vendor/modernizr
+#= require zeroclipboard
 #= require_tree .
-#
+
+jQuery ->
+  new ZeroClipboard $('[data-behavior=clip]')

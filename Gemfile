@@ -20,6 +20,7 @@ gem 'spring',        group: :development
 gem 'will_paginate', '~> 3.0'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
+gem 'zeroclipboard-rails'
 
 gem 'rack-cors', :require => 'rack/cors' # allow cross-domain ajax
 
