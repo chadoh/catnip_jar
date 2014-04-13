@@ -1,7 +1,9 @@
 class TreatsController < ApplicationController
+  http_basic_authenticate_with name: ENV["USERNAME"],
+    password: ENV["PASSWORD"],
+    only: :index
 
   def index
-    http_basic_authenticate_with name: ENV["USERNAME"], password: ENV["PASSWORD"]
     @treats = Treat.paginate page: params[:page], per_page: 30
   end
 
