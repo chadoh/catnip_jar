@@ -42,13 +42,13 @@ module CatnipJar
       g.view_specs = false
     end
 
-    config.middleware.use Rack::Cors do
+    config.middleware.insert_before ActionDispatch::Static, Rack::Cors, logger: Rails.logger do
       allow do
         origins '*'
         resource '*',
-          :headers => :any,
-          :methods => [:get, :post, :options],
-          :max_age => 604800 # one week
+          headers: :any,
+          methods: [:get, :post, :options],
+          max_age: 604800 # one week
       end
     end
 

@@ -3,6 +3,8 @@ class TreatsController < ApplicationController
     password: ENV["PASSWORD"],
     only: :index
 
+  skip_before_filter :verify_authenticity_token, only: :create
+
   def index
     @treats = Treat.paginate page: params[:page], per_page: 30
   end
@@ -19,6 +21,17 @@ class TreatsController < ApplicationController
       end
     end
   end
+
+  def destroy
+    @treat = Treat.find(params[:id])
+
+    @treat.destroy
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.json { head :no_content }
+    end
+  end
+
 
   private
 
