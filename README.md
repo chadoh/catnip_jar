@@ -12,4 +12,4 @@ store usernames & cookies from those sites.
 
 Yes, it is illegal to use this if you're not doing it for [a class explaining
 how the bad guys do
-it](http://www.meetup.com/Girl-Develop-It-Philadelphia/events/171747852/).
+it](http://chadoh.github.io/badhax/).
